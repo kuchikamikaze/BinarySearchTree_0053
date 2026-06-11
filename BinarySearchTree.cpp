@@ -55,4 +55,18 @@ class BinaryTree
         //this function searches the current node of the spesific node
         //as well as the current node of its parent
         void search(string element, Node *&parent, Node *&currentNode){
+        currentNode = ROOT;
+        parent = NULL;
+
+        while ((currentNode != NULL) &&
+                (currentNode->info != element))
+        {
+            parent = currentNode;
+
+            if (element < currentNode->info)
+                currentNode = currentNode->leftchild;
+            else
+                currentNode = currentNode->rightchild;
+        }
+    }
 
