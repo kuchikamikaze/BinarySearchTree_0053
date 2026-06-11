@@ -19,9 +19,20 @@ class Node {
 class BinaryTree
 {
     public:
-    Node *  ROOT;
+    Node *ROOT;
 
     BinaryTree()
     {
         ROOT = NULL; //initializing ROOT to NULL
     }
+
+    //insert a node in the binary search tree
+        void insert(string elemen){
+            Node *newNode = new Node (elemen, NULL, NULL);
+            newNode -> info = elemen;
+            newNode -> leftchild = NULL;
+            newNode -> rightchild = NULL;
+
+            Node *parent = NULL;
+            Node *currentNode = NULL;
+
